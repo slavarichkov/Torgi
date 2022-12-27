@@ -1,0 +1,11 @@
+.info_text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fd0101;
+    background-color: rgb(212, 209, 209);
+    width: fit-content;
+    padding: 0 5px;
+    margin: 10px 0 0 0;
+}
