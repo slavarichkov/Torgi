@@ -1,5 +1,11 @@
 .header_text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fd0101;
     display: flex;
     margin: 0;
     align-items: center;
+    padding-left: 10px;
 }

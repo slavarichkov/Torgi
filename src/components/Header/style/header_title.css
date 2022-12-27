@@ -1,6 +1,11 @@
 .header_title {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    color: #fd0101;
     display: flex;
     margin: 0;
-    align-items: center;
     padding-left: 10px;
+    align-items: center;
 }
