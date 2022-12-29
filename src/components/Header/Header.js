@@ -4,8 +4,10 @@ function Header() {
     return (
         <header className="header">
             <h2 className='header_title'>Ход торгов</h2>
-            <p className='header_text'>Тестовые торги на аппарат ЛОТОС №2033564 ({Time()}) </p>
+            <p className='header_text'>Тестовые торги на аппарат ЛОТОС №2033564</p>
+            <Time />
         </header>
+
     );
 }
 

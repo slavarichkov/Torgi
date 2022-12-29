@@ -31,12 +31,26 @@ function Info() {
         return () => clearInterval(timerID);
     }, [over, seconds]); // ставлю зависимость, чтобы обновлялся при изменении секунд и при изменении вкл выкл таймер. - ускоряется 
 
+    // useEffect(() => {
+    //     const timerID = setTimeOut(() => tick(), 1000);
+    //     return () => clearInterval(timerID);
+    // }, [over, seconds]); // ставлю зависимость, чтобы обновлялся при изменении секунд и при изменении вкл выкл таймер. - ускоряется 
+
+    // useEffect(() => {
+    //     const timerID = setTimeout(function run() {
+    //         tick();
+    //         setTimeout(run, 1000);
+    //     }, 1000);
+    //     //return () => clearInterval(timerID);
+    // }, [over, seconds]); // ставлю зависимость, чтобы обновлялся при изменении секунд и при изменении вкл выкл таймер. 
+
+
     return (
         <div className='info'>
             <p className='info_text'>Уважаемые участники, во время вашего хода вы можете изменить параметры торгов, указанные в таблице:</p>
             <div className='info_motion'>
                 <p className='info_motion-text'>ХОД</p>
-                <div className='info_timer'>{seconds}</div> 
+                <div className='info_timer'>{seconds}</div>
                 {/* <Timer /> */}
             </div>
         </div>

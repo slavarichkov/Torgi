@@ -16,7 +16,8 @@ function Time() {
     let seconds = () => { if (isDate.getSeconds() < 10) { return '0' + isDate.getSeconds() } else { return isDate.getSeconds() } }; // секунды
     let timeNow = hours() + ':' + minutes() + ':' + seconds(); // получить время
 
-    return dateNow + ' ' + timeNow;
+    return (<p className='header_text'>({dateNow} {timeNow});</p>)
+
 
 };
 
