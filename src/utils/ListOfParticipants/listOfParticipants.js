@@ -1,4 +1,4 @@
-const listOfParticipants = [
+const ListOfParticipants = [
     {
         name: 'ООО Фирма 1',
         productionTime: '80',
@@ -6,6 +6,7 @@ const listOfParticipants = [
         paymentTerms: '30',
         cost: '100',
         qualityStandards: '',
+        actions: '',
     },
     {
         name: 'ООО Фирма 2',
@@ -14,6 +15,7 @@ const listOfParticipants = [
         paymentTerms: '30',
         cost: '100',
         qualityStandards: '',
+        actions: '',
     },
     {
         name: 'ООО Фирма 3',
@@ -22,7 +24,8 @@ const listOfParticipants = [
         paymentTerms: '30',
         cost: '100',
         qualityStandards: '',
+        actions: '',
     },
 ]
 
-export default listOfParticipants;
+export default ListOfParticipants;
