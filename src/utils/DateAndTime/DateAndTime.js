@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 
 function Time() {
-    //дата и время
     const [isDate, setIsDate] = useState(new Date());
-    setInterval(() => { setIsDate(new Date()); }, 1000); // обновить дату раз в секунду
+    useEffect(() => {
+        const timerID = setInterval(() => { setIsDate(new Date()); }, 1000);;
+        return () => clearInterval(timerID);
+    }, [isDate]);
 
     //дата
     let date = () => { if (isDate.getDate() < 10) { return '0' + isDate.getDate() } else { return isDate.getDate() } }; // число

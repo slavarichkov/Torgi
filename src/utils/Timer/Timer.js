@@ -28,8 +28,8 @@ function Timer() {
         }
     }
 
-    const clearTimer = (e) => {   
-        setTimer('00:00:10');
+    const clearTimer = (e) => {
+        setTimer('00:07:00');
         if (Ref.current) clearInterval(Ref.current);
         const id = setInterval(() => {
             startTimer(e);
@@ -51,7 +51,7 @@ function Timer() {
     }
 
     return (
-        <h2>{timer}</h2>
+        <h2 className='info_timer'>{timer}</h2>
         // <button onClick={onClickReset}>Reset</button>
     )
 }
