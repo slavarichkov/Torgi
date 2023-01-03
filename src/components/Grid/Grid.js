@@ -1,17 +1,21 @@
+import ListOfParticipants from '../../utils/ListOfParticipants/ListOfParticipants'; // захардкоденный список участников
+import Tenderer from './../Tenderer/Tenderer'
+
 function Grid() {
 
     return (
         <div className='grid'>
-            <div className='grid_list'>
-                <h3 className='grid_list-title '>Параметры и требования</h3>
-                <p className='grid_list-text grid_list-color'>Наличие комплекса мероприятий, повышающих стандарты качества изготовления</p>
-                <p className='grid_list-text'>Срок изготовления лота, дней</p>
-                <p className='grid_list-text grid_list-color'>Гарантийные обязательства, мес</p>
-                <p className='grid_list-text'>Условия оплаты</p>
-                <p className='grid_list-text grid_list-color'>Стоимость изготовления лота, руб ( без НДС)</p>
-                <p className='grid_list-text'>Действия:</p>
-            </div>
-            
+            {/* информация для заполнения участников */}
+          
+                <Tenderer
+                    name={'Параметры и требования'}
+                    qualityStandards={'Наличие комплекса мероприятий, повышающих стандарты качества изготовления '}
+                    productionTime={'Срок изготовления лота, дней'}
+                    warranty={'Гарантийные обязательства, мес'}
+                    paymentTerms={'Условия оплаты'} cost={'Стоимость изготовления лота, руб ( без НДС)'}
+                    actions={'Действия:'} />
+
+
         </div >
     )
 }
