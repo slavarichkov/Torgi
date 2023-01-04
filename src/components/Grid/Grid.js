@@ -1,47 +1,39 @@
-//import ListOfParticipants from '../../utils/ListOfParticipants/ListOfParticipants'; // захардкоденный список участников
+import { useEffect } from 'react';
+
+import ListOfParticipants from '../../utils/ListOfParticipants/ListOfParticipants'; // захардкоденный список участников
 import Tenderer from './../Tenderer/Tenderer'
-import Timer1 from '../../utils/Timer/Timer1';
+import Timer1 from '../../utils/Timer/Timer1'; // Таймер
 
-function Grid({ resetTimer }) {
+function Grid({ resetTimer, addParticipants, removeParticipants }) {
 
-    const ListOfParticipants = [
-        {
-            name: 'ООО Фирма 1',
-            productionTime: '80',
-            warranty: '24',
-            paymentTerms: '30',
-            cost: '100',
-            qualityStandards: '-',
-            actions: '-',
-            id: '1',
-            active: false,
-            participantNumber: '1',
-        },
-        {
-            name: 'ООО Фирма 2',
-            productionTime: '80',
-            warranty: '24',
-            paymentTerms: '30',
-            cost: '100',
-            qualityStandards: '-',
-            actions: '-',
-            id: '2',
-            active: true,
-            participantNumber: '2',
-        },
-        {
-            name: 'ООО Фирма 3',
-            productionTime: '80',
-            warranty: '24',
-            paymentTerms: '30',
-            cost: '100',
-            qualityStandards: '-',
-            actions: '-',
-            id: '3',
-            active: false,
-            participantNumber: '3',
-        },
-    ]
+    const testNewParticip = {
+        name: 'ООО Фирма',
+        productionTime: '80',
+        warranty: '24',
+        paymentTerms: '30',
+        cost: '100',
+        qualityStandards: '-',
+        actions: '-',
+        id: '',
+        active: false,
+        participantNumber: '',
+    }
+
+    useEffect(() => {
+        if (addParticipants && ListOfParticipants.length < 5) {
+            console.log(1);
+            testNewParticip.id = ListOfParticipants.length + 1;
+            testNewParticip.participantNumber = ListOfParticipants.length + 1;
+            ListOfParticipants.push(testNewParticip)
+        } else if (removeParticipants && ListOfParticipants.length > 1) {
+            let index = ListOfParticipants.length;
+            let activeParticipantsIndex = ListOfParticipants.findIndex((part) => part.active === true)
+            console.log(activeParticipantsIndex)
+            ListOfParticipants.splice(activeParticipantsIndex === index - 1 ? index - 2 : index - 1, 1);
+        }
+    }, [addParticipants, removeParticipants])
+
+
 
     return (
         <div className='grid'>
