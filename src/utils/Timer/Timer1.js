@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Timer1({ hoursInstalled = 0, minutesInstalled = 2, secondsInstalled = 0 }) {
+function Timer1({ hoursInstalled = 0, minutesInstalled = 2, secondsInstalled = 0, resetInstalled }) {
     const [over, setOver] = useState(false);
     const [[hours, minutes, seconds], setTime] = useState([hoursInstalled, minutesInstalled, secondsInstalled]);
 
@@ -19,13 +19,17 @@ function Timer1({ hoursInstalled = 0, minutesInstalled = 2, secondsInstalled = 0
 
     const reset = () => {
         setTime([parseInt(hoursInstalled), parseInt(minutesInstalled), parseInt(secondsInstalled)]);
-        setOver(true);
+        setOver(false);
     };
 
     useEffect(() => {
         const timerID = setInterval(() => tick(), 1000);
         return () => clearInterval(timerID);
     }, [over, seconds]);
+
+    useEffect(() => {
+        reset();
+    }, [resetInstalled])
 
     return (
         <h2 className='info_timer'>

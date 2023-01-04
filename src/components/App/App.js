@@ -1,5 +1,5 @@
 import './style/app.css';
-import React from 'react';
+import { useState } from 'react';
 
 import Header from './../Header/Header' // импорт Header
 import Info from './../Info/Info' // импорт Info 
@@ -9,12 +9,21 @@ import DevelopTest from './../DevelopTest/DevelopTest'
 
 function App() {
 
+  const [isResetClick, setIsResetClick] = useState(false);
+
+  function handleResetTimer() {
+    setIsResetClick(true);
+    setTimeout(() => {
+      setIsResetClick(false);
+    }, 1);
+  }
+
   return (
     <div className="app">
       <Header />
       <Info />
-      <Grid />
-      <DevelopTest />
+      <Grid resetTimer = {isResetClick}/>
+      <DevelopTest resetTimer={handleResetTimer} />
     </div>
   );
 }

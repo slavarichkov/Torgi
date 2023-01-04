@@ -1,6 +1,6 @@
 // компонент для тестирования функционала
 
-function DevelopTest() {
+function DevelopTest({ resetTimer }) {
 
     return (
         <div className='develop-test'>
@@ -8,7 +8,7 @@ function DevelopTest() {
             <div className='develop-test_buttoms'>
                 <button className='dev_button'>Добавить участника</button>
                 <button className='dev_button'>Удалить участника</button>
-                <button className='dev_button'>Перезапустить таймер</button>
+                <button className='dev_button' onClick={resetTimer}>Перезапустить таймер</button>
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Tenderer from './../Tenderer/Tenderer'
 import Timer1 from '../../utils/Timer/Timer1';
 
-function Grid({ timer }) {
+function Grid({ timer, resetTimer }) {
 
     const [isActive, setIsActive] = useState(false)
 
@@ -60,7 +60,7 @@ function Grid({ timer }) {
                 actions={'Действия:'}
                 styleText={'grid_list-menu-text'}
                 child={<p className='info_motion-text'>ХОД</p>}
-                styleMainText = 'grid_list-title-main'
+                styleMainText='grid_list-title-main'
             />
             {/* отрисовать участников ( можно получать с сервера) */}
             {ListOfParticipants.map((part) => {
@@ -74,7 +74,7 @@ function Grid({ timer }) {
                     actions={part.actions}
                     key={part.id}
                     number={<p className='grid_list-title'>`Участник № {part.participantNumber}`</p>}
-                    child={part.active ? <Timer1 /> : ''}
+                    child={part.active ? <Timer1 resetInstalled={resetTimer} /> : ''}
                 />
             })}
 
