@@ -2,7 +2,6 @@
 
 function DevelopTest() {
 
-
     return (
         <div className='develop-test'>
             <h2 className='develop-test_title'> тестирование функций </h2>
