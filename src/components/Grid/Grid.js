@@ -1,12 +1,8 @@
-import { useState } from 'react';
-
 //import ListOfParticipants from '../../utils/ListOfParticipants/ListOfParticipants'; // захардкоденный список участников
 import Tenderer from './../Tenderer/Tenderer'
 import Timer1 from '../../utils/Timer/Timer1';
 
-function Grid({ timer, resetTimer }) {
-
-    const [isActive, setIsActive] = useState(false)
+function Grid({ resetTimer }) {
 
     const ListOfParticipants = [
         {
