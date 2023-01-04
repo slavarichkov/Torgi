@@ -19,6 +19,7 @@ function Grid({ timer }) {
             actions: '-',
             id: '1',
             active: false,
+            participantNumber: '1',
         },
         {
             name: 'ООО Фирма 2',
@@ -30,6 +31,7 @@ function Grid({ timer }) {
             actions: '-',
             id: '2',
             active: true,
+            participantNumber: '2',
         },
         {
             name: 'ООО Фирма 3',
@@ -41,6 +43,7 @@ function Grid({ timer }) {
             actions: '-',
             id: '3',
             active: false,
+            participantNumber: '3',
         },
     ]
 
@@ -57,6 +60,7 @@ function Grid({ timer }) {
                 actions={'Действия:'}
                 styleText={'grid_list-menu-text'}
                 child={<p className='info_motion-text'>ХОД</p>}
+                styleMainText = 'grid_list-title-main'
             />
             {/* отрисовать участников ( можно получать с сервера) */}
             {ListOfParticipants.map((part) => {
@@ -69,9 +73,9 @@ function Grid({ timer }) {
                     cost={part.cost}
                     actions={part.actions}
                     key={part.id}
+                    number={<p className='grid_list-title'>`Участник № {part.participantNumber}`</p>}
                     child={part.active ? <Timer1 /> : ''}
                 />
-
             })}
 
         </div >

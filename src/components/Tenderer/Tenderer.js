@@ -9,13 +9,18 @@ function Tenderer({
     actions,
     styleText,
     id,
-    child
+    child,
+    number,
+    styleMainText
 }) {
     return (
         <div className={`grid_list ${styleText}`} id={id}>
             <div className='grid_list-container'>
-                <div>{child}</div>
-                <h3 className={`grid_list-title ${styleText}`}>{name}</h3>
+                <div>
+                    {number}
+                    <h3 className={`grid_list-title ${styleText} ${styleMainText}`}>{name}</h3>
+                </div>
+                {child}
             </div>
             <p className={`grid_list-text grid_list-color ${styleText}`}>{qualityStandards}</p>
             <p className={`grid_list-text ${styleText}`}>{productionTime}</p>
