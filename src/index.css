@@ -28,3 +28,6 @@ code {
 @import url(./components/Grid/style/grid_list-menu-text.css);
 @import url(./components/Grid/style/grid_list-container.css);
 @import url(./components/Grid/style/grid_list-title-main.css);
+@import url(./components/DevelopTest/style/develop-test.css);
+@import url(./components/DevelopTest/style/develop-test_buttoms.css);
+@import url(./components/DevelopTest/style/dev_button.css);

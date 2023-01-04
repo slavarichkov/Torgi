@@ -1,0 +1,4 @@
+.develop-test_buttoms {
+    display: flex;
+    flex-direction: row;
+}

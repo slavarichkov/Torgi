@@ -1,0 +1,14 @@
+.dev_button {
+    width: 200px;
+    height: 25px;
+    margin: 0 15px 0;
+    background-color: rgb(193, 193, 249);
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+.dev_button:hover{
+    opacity: 0.5;
+}
