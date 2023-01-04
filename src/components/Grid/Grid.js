@@ -56,6 +56,7 @@ function Grid({ timer }) {
                 cost={'Стоимость изготовления лота, руб ( без НДС)'}
                 actions={'Действия:'}
                 styleText={'grid_list-menu-text'}
+                child={<p className='info_motion-text'>ХОД</p>}
             />
             {/* отрисовать участников ( можно получать с сервера) */}
             {ListOfParticipants.map((part) => {
