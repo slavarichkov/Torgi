@@ -5,4 +5,8 @@
     line-height: 18px;
     color: #424243;
     margin: 0;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

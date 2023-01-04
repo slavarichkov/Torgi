@@ -1,15 +1,29 @@
 
-function Tenderer({ name, qualityStandards, productionTime, warranty, paymentTerms, cost, actions }) {
+function Tenderer({
+    name,
+    qualityStandards,
+    productionTime,
+    warranty,
+    paymentTerms,
+    cost,
+    actions,
+    styleText,
+    id,
+    child
+}) {
     return (
-        <div className='grid_list'>
-            <h3 className='grid_list-title '>{name}</h3>
-            <p className='grid_list-text grid_list-color'>{qualityStandards}</p>
-            <p className='grid_list-text'>{productionTime}</p>
-            <p className='grid_list-text grid_list-color'>{warranty}</p>
-            <p className='grid_list-text'>{paymentTerms}</p>
-            <p className='grid_list-text grid_list-color'>{cost}</p>
-            <p className='grid_list-text'>{actions}</p>
-        </div>
+        <div className={`grid_list ${styleText}`} id={id}>
+            <div className='grid_list-container'>
+                <div>{child}</div>
+                <h3 className={`grid_list-title ${styleText}`}>{name}</h3>
+            </div>
+            <p className={`grid_list-text grid_list-color ${styleText}`}>{qualityStandards}</p>
+            <p className={`grid_list-text ${styleText}`}>{productionTime}</p>
+            <p className={`grid_list-text grid_list-color ${styleText}`}>{warranty}</p>
+            <p className={`grid_list-text ${styleText}`}>{paymentTerms}</p>
+            <p className={`grid_list-text grid_list-color ${styleText}`}>{cost}</p>
+            <p className={`grid_list-text ${styleText}`}>{actions}</p>
+        </div >
     )
 }
 

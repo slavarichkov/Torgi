@@ -1,7 +1,48 @@
-import ListOfParticipants from '../../utils/ListOfParticipants/ListOfParticipants'; // захардкоденный список участников
-import Tenderer from './../Tenderer/Tenderer'
+import { useState } from 'react';
 
-function Grid() {
+//import ListOfParticipants from '../../utils/ListOfParticipants/ListOfParticipants'; // захардкоденный список участников
+import Tenderer from './../Tenderer/Tenderer'
+import Timer1 from '../../utils/Timer/Timer1';
+
+function Grid({ timer }) {
+
+    const [isActive, setIsActive] = useState(false)
+
+    const ListOfParticipants = [
+        {
+            name: 'ООО Фирма 1',
+            productionTime: '80',
+            warranty: '24',
+            paymentTerms: '30',
+            cost: '100',
+            qualityStandards: '-',
+            actions: '-',
+            id: '1',
+            active: false,
+        },
+        {
+            name: 'ООО Фирма 2',
+            productionTime: '80',
+            warranty: '24',
+            paymentTerms: '30',
+            cost: '100',
+            qualityStandards: '-',
+            actions: '-',
+            id: '2',
+            active: true,
+        },
+        {
+            name: 'ООО Фирма 3',
+            productionTime: '80',
+            warranty: '24',
+            paymentTerms: '30',
+            cost: '100',
+            qualityStandards: '-',
+            actions: '-',
+            id: '3',
+            active: false,
+        },
+    ]
 
     return (
         <div className='grid'>
@@ -14,6 +55,7 @@ function Grid() {
                 paymentTerms={'Условия оплаты'}
                 cost={'Стоимость изготовления лота, руб ( без НДС)'}
                 actions={'Действия:'}
+                styleText={'grid_list-menu-text'}
             />
             {/* отрисовать участников ( можно получать с сервера) */}
             {ListOfParticipants.map((part) => {
@@ -25,6 +67,8 @@ function Grid() {
                     paymentTerms={part.paymentTerms}
                     cost={part.cost}
                     actions={part.actions}
+                    key={part.id}
+                    child={part.active ? <Timer1 /> : ''}
                 />
 
             })}

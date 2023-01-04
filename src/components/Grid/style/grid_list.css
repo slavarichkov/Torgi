@@ -1,5 +1,7 @@
 .grid_list {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    min-width: 200px;
+    width: 500px;
+    text-align: center;
 }

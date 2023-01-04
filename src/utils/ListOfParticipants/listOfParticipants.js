@@ -1,3 +1,4 @@
+
 const ListOfParticipants = [
     {
         name: 'ООО Фирма 1',
@@ -5,8 +6,8 @@ const ListOfParticipants = [
         warranty: '24',
         paymentTerms: '30',
         cost: '100',
-        qualityStandards: '',
-        actions: '',
+        qualityStandards: '-',
+        actions: '-',
     },
     {
         name: 'ООО Фирма 2',
@@ -14,8 +15,8 @@ const ListOfParticipants = [
         warranty: '24',
         paymentTerms: '30',
         cost: '100',
-        qualityStandards: '',
-        actions: '',
+        qualityStandards: '-',
+        actions: '-',
     },
     {
         name: 'ООО Фирма 3',
@@ -23,8 +24,8 @@ const ListOfParticipants = [
         warranty: '24',
         paymentTerms: '30',
         cost: '100',
-        qualityStandards: '',
-        actions: '',
+        qualityStandards: '-',
+        actions: '-',
     },
 ]
 
