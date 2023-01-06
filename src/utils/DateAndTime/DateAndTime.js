@@ -9,7 +9,7 @@ function Time() {
 
     //дата
     let date = () => { if (isDate.getDate() < 10) { return '0' + isDate.getDate() } else { return isDate.getDate() } }; // число
-    let month = () => { if (isDate.getMonth() < 10) { return '0' + isDate.getMonth() } else { return isDate.getMonth() } }; // месяц
+    let month = () => { if ((isDate.getMonth() + 1) < 10) { return '0' + (isDate.getMonth() + 1) } else { return (isDate.getMonth() + 1) } }; // месяц
     let dateNow = date() + '.' + month() + '.' + isDate.getFullYear(); // получить дату;
 
     // время
