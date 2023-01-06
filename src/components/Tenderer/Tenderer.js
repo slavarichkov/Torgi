@@ -11,23 +11,33 @@ function Tenderer({
     id,
     child,
     number,
-    styleMainText
+    styleTitleText,
+    costDiscount,
+    totalCost,
+    styleCostTitleText,
 }) {
+
     return (
-        <div className={`grid_list ${styleText}`} id={id}>
-            <div className='grid_list-container'>
+        <div className={`tenderer_list ${styleText}`} id={id}>
+            <div className='tenderer_list-container'>
                 <div>
                     {number}
-                    <h3 className={`grid_list-title ${styleText} ${styleMainText}`}>{name}</h3>
+                    <h3 className={`tenderer_list-title ${styleText} ${styleTitleText}`}>{name}</h3>
                 </div>
                 {child}
             </div>
-            <p className={`grid_list-text grid_list-color ${styleText}`}>{qualityStandards}</p>
-            <p className={`grid_list-text ${styleText}`}>{productionTime}</p>
-            <p className={`grid_list-text grid_list-color ${styleText}`}>{warranty}</p>
-            <p className={`grid_list-text ${styleText}`}>{paymentTerms}</p>
-            <p className={`grid_list-text grid_list-color ${styleText}`}>{cost}</p>
-            <p className={`grid_list-text ${styleText}`}>{actions}</p>
+            <p className={`tenderer_list-text tenderer_list-color ${styleText}`}>{qualityStandards}</p>
+            <p className={`tenderer_list-text ${styleText}`}>{productionTime}</p>
+            <p className={`tenderer_list-text tenderer_list-color ${styleText}`}>{warranty}</p>
+            <p className={`tenderer_list-text ${styleText}`}>{paymentTerms}</p>
+            <div className={`tenderer_list-container-coast `}>
+                <p className={`tenderer_list-text tenderer_list-color ${styleText} ${styleCostTitleText}`}>
+                    {cost}
+                </p>
+                {costDiscount}
+                {totalCost}
+            </div>
+            <p className={`tenderer_list-text ${styleText}`}>{actions}</p>
         </div >
     )
 }

@@ -19,6 +19,10 @@ function Grid({ resetTimer, addParticipants, removeParticipants }) {
         participantNumber: '',
     }
 
+    function divideNumberByPieces(x, delimiter) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, delimiter || " ");
+    }
+
     useEffect(() => {
         if (addParticipants && ListOfParticipants.length < 5) {
             console.log(1);
@@ -37,7 +41,7 @@ function Grid({ resetTimer, addParticipants, removeParticipants }) {
 
     return (
         <div className='grid'>
-            {/* информация для заполнения участников */}
+            {/* информация для заполнения участников, отрисовать из компонента tenderer */}
             <Tenderer
                 name={'Параметры и требования'}
                 qualityStandards={'Наличие комплекса мероприятий, повышающих стандарты качества изготовления '}
@@ -46,9 +50,10 @@ function Grid({ resetTimer, addParticipants, removeParticipants }) {
                 paymentTerms={'Условия оплаты'}
                 cost={'Стоимость изготовления лота, руб ( без НДС)'}
                 actions={'Действия:'}
-                styleText={'grid_list-menu-text'}
+                styleText={'tenderer_list-menu-text'} // стиль текста меню таблицы
                 child={<p className='info_motion-text'>ХОД</p>}
-                styleMainText='grid_list-title-main'
+                styleTitleText='tenderer_list-title-main' // стиль текста надписи "параметры и требования"
+                styleCostTitleText='tenderer_list-cost-title' // стиль текста цены
             />
             {/* отрисовать участников ( можно получать с сервера) */}
             {ListOfParticipants.map((part) => {
@@ -58,11 +63,24 @@ function Grid({ resetTimer, addParticipants, removeParticipants }) {
                     productionTime={part.productionTime}
                     warranty={part.warranty}
                     paymentTerms={part.paymentTerms}
-                    cost={part.cost}
+                    cost={divideNumberByPieces(part.cost, ',') + ' руб'}
                     actions={part.actions}
                     key={part.id}
-                    number={<p className='grid_list-title'>`Участник № {part.participantNumber}`</p>}
+                    number={<p className='tenderer_list-title'>`Участник № {part.participantNumber}`</p>}
                     child={part.active ? <Timer1 resetInstalled={resetTimer} /> : ''}
+                    styleCostTitleText={'tenderer_list-text-coast-title_color'}
+                    costDiscount=
+                    {
+                        <p className={`tenderer_list-text tenderer_list-color tenderer_list-text-coast-discount_color`}>
+                            {part.costDiscount ? '- ' + divideNumberByPieces(part.costDiscount, ',') + ' руб' : ''}
+                        </p>
+                    }
+                    totalCost=
+                    {
+                        <p className={`tenderer_list-text tenderer_list-color tenderer_list-text-coast-costTotal_color`}>
+                            {part.costTotal ? divideNumberByPieces(part.costTotal, ',') + ' руб' : ''}
+                        </p>
+                    }
                 />
             })}
 
