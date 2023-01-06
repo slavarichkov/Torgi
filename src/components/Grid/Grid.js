@@ -6,7 +6,7 @@ import Timer1 from '../../utils/Timer/Timer1'; // Таймер
 
 function Grid({ resetTimer, addParticipants, removeParticipants }) {
 
-    const testNewParticip = {
+    const testNewParticip = { // захардкоденный новый участник 
         name: 'ООО Фирма',
         productionTime: '80',
         warranty: '24',
