@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import ListOfParticipants from '../../utils/ListOfParticipants/ListOfParticipants'; // захардкоденный список участников
 import Tenderer from './../Tenderer/Tenderer'
-import Timer1 from '../../utils/Timer/Timer1'; // Таймер
+import Timer from '../../utils/Timer/Timer'; // Таймер
 
 function Grid({ resetTimer, addParticipants, removeParticipants }) {
 
@@ -67,7 +67,7 @@ function Grid({ resetTimer, addParticipants, removeParticipants }) {
                     actions={part.actions}
                     key={part.id}
                     number={<p className='tenderer_list-title'>`Участник № {part.participantNumber}`</p>}
-                    child={part.active ? <Timer1 resetInstalled={resetTimer} /> : ''}
+                    child={part.active ? <Timer resetInstalled={resetTimer} /> : ''} 
                     styleCostTitleText={'tenderer_list-text-coast-title_color'}
                     costDiscount=
                     {

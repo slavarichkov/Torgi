@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Timer1({ hoursInstalled = 0, minutesInstalled = 2, secondsInstalled = 0, resetInstalled }) {
+function Timer({ hoursInstalled = 0, minutesInstalled = 2, secondsInstalled = 0, resetInstalled }) {
     const [over, setOver] = useState(false);
     const [[hours, minutes, seconds], setTime] = useState([hoursInstalled, minutesInstalled, secondsInstalled]);
 
@@ -40,4 +40,4 @@ function Timer1({ hoursInstalled = 0, minutesInstalled = 2, secondsInstalled = 0
     )
 }
 
-export default Timer1;
+export default Timer;
