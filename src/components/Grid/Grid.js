@@ -25,7 +25,6 @@ function Grid({ resetTimer, addParticipants, removeParticipants }) {
 
     useEffect(() => {
         if (addParticipants && ListOfParticipants.length < 5) {
-            console.log(1);
             testNewParticip.id = ListOfParticipants.length + 1;
             testNewParticip.participantNumber = ListOfParticipants.length + 1;
             ListOfParticipants.push(testNewParticip)
