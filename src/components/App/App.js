@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header title ={'Ход торгов'} subtitle={'Тестовые торги на аппарат ЛОТОС №2033564'}/>
       <Info />
       <Grid
         resetTimer={isResetClick}
