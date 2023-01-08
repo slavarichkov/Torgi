@@ -67,7 +67,7 @@ function Grid({ resetTimer, addParticipants, removeParticipants }) {
                     actions={part.actions}
                     key={part.id}
                     number={<p className='tenderer_list-title'>`Участник № {part.participantNumber}`</p>}
-                    child={part.active ? <Timer resetInstalled={resetTimer} /> : ''} 
+                    child={part.active ? <Timer resetInstalled={resetTimer} /> : ''}
                     styleCostTitleText={'tenderer_list-text-coast-title_color'}
                     costDiscount=
                     {
