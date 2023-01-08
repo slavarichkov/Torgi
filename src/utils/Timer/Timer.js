@@ -32,7 +32,7 @@ function Timer({ hoursInstalled = 0, minutesInstalled = 2, secondsInstalled = 0,
     }, [resetInstalled])
 
     return (
-        <h2 className='info_timer'>
+        <h2 className='timer'>
             {hours > 9 ? hours : '0' + hours}
             :{minutes > 9 ? minutes : '0' + minutes}
             :{seconds > 9 ? seconds : '0' + seconds}

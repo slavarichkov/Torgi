@@ -19,7 +19,7 @@ code {
 @import url(./components/Info/style/info_text.css);
 @import url(./components/Info/style/info_motion.css);
 @import url(./components/Info/style/info_motion-text.css);
-@import url(./components/Info/style/info_timer.css);
+@import url(./utils/Timer/style/timer.css);
 @import url(./components/Grid/style/grid.css);
 @import url(./components/Tenderer/style/tenderer_list.css);
 @import url(./components/Tenderer/style/tenderer_list-title.css);
